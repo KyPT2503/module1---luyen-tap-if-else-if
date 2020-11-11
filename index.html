@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+<div>
+    <label for="username">User Name</label>
+    <input type="text" id="username" placeholder="User Name">
+    <br>
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="password">
+    <br>
+    <button type="button" onclick="submit()">Log in</button>
+    <p id="message"></p>
+</div>
+<script>
+    function submit()
+    {
+        let username=document.getElementById("username").value;
+        let password=document.getElementById("password").value;
+        if(username=="Admin")
+        {
+            if(password=="TheMaster")
+            {
+                document.getElementById("message").innerHTML="Welcome";
+            }
+            else if(password==null)
+            {
+                document.getElementById("message").innerHTML="Canceled";
+            }
+            else
+            {
+                document.getElementById("message").innerHTML="Wrong password";
+            }
+        }
+        else if(username==null)
+        {
+            document.getElementById("message").innerHTML="canceld";
+        }
+        else
+        {
+            document.getElementById("message").innerHTML="I don't know you";
+        }
+    }
+</script>
+</body>
+</html>
